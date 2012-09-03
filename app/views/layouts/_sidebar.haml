@@ -1,0 +1,20 @@
+#accordion.accordion
+  .accordion-group
+    .accordion-heading
+      %a.accordion-toggle{ href: "#collapseOne", "data-toggle" => "collapse", "data-parent" => "#accordion2"} 菜单一
+    #collapseOne.accordion-body.collapse.in
+      .accordion-inner
+        菜单一所属子菜单
+  .accordion-group
+    .accordion-heading
+      %a.accordion-toggle{ href: "#collapseTwo", "data-toggle" => "collapse", "data-parent" => "#accordion2"} 菜单二
+    #collapseTwo.accordion-body.collapse.in
+      .accordion-inner
+        菜单一所属子菜单
+  .accordion-group
+    .accordion-heading
+      %a.accordion-toggle{ href: "#collapseThree", "data-toggle" => "collapse", "data-parent" => "#accordion2"} 菜单三
+    #collapseThree.accordion-body.collapse.in
+      .accordion-inner
+        菜单一所属子菜单
+

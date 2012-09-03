@@ -1,0 +1,42 @@
+zh-CN:
+  devise:
+    registrations:
+      new:
+        title: 新用户注册
+        sign_up: 用户注册
+        email: 请输入邮件地址
+        pwd: 请输入用户密码
+        con_pwd: 请确认用户密码
+      edit:
+        title: 编辑%{resources}
+        cur_pwd: 原密码
+        cancel_user: 注销我的帐号
+        back: 返回
+    sessions:
+      new:
+        title: 用户登录 
+        email: 请输入邮件地址
+        pwd: 请输入用户密码
+        remember: 记住我
+        sign_in: 登录
+    password:
+      new:
+        title: 忘记密码
+        email: 请输入邮件地址
+        submit: 提交
+      edit:
+        title: 修改密码
+        reset_pwd: 原始密码
+        pwd: 请输入用户密码
+        con_pwd: 请确认用户密码
+        change: 修改密码
+    shared:
+      links:
+        sign_in: 登录
+        sign_up: 注册
+        forgot: 忘记密码了？
+
+
+
+      
+  

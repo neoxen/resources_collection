@@ -1,0 +1,5 @@
+= f.kindeditor :content, width: 600, height: 200
+
+.form-actions
+  = f.button :submit, class: 'btn btn-primary'
+  = link_to t('back'), subject_posts_path(@post.subject), class: 'btn'

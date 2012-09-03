@@ -1,0 +1,38 @@
+- model_class = Reply
+
+- content_for :sidebar do
+  .well-small
+    %h4 类似帖子
+
+
+%ul.breadcrumb
+  %li
+    = link_to Subject.model_name.human, subjects_path
+    %span.divider /
+  %li
+    = link_to @post.subject.title, subject_posts_path(@post.subject)
+    %span.divider /
+  %li.active
+    = t @post.title
+
+#replies
+  %ul.unstyled
+    %li.post
+      .post-title= @post.title
+      %h6.create-time=l @post.created_at
+      .post-content
+        = @post.content.html_safe
+    - @replies.each do |reply|
+      %li.reply
+        .content= reply.content.html_safe
+        .action
+          %h6=l reply.created_at
+          - if current_user and current_user == reply.user
+            = link_to t('edit'), edit_post_path(@post, reply), class: 'btn btn-mini'
+            = link_to t('destroy'), post_reply_path(@post, reply), method: :delete, confirm: t('confirm'), class: 'btn btn-mini btn-danger'
+
+= paginate @replies
+
+#reply-post
+  = simple_form_for @reply, url: post_replies_path(@post), html: { class: 'form-vertical'} do |f|
+    = render partial: 'form', locals: { f: f } 

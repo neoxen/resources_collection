@@ -1,0 +1,11 @@
+- model_class = Post
+
+%ul.breadcrumb
+  %li
+    = link_to Subject.model_name.human, subjects_path
+    %span.divider /
+  %li.active
+    = t('.edit', model: model_class.model_name.human)
+
+= simple_form_for @post, url: subject_post_url(@subject, @post), method: 'put', html: { class: 'form-vertical' } do |f| 
+  = render partial: 'form', locals: { f: f }

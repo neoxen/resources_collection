@@ -1,0 +1,7 @@
+- model_class = Post
+
+.page-header
+  %h1= t('.title')
+
+= simple_form_for @post, url: subject_posts_url(@subject), html: { class: 'form-vertical' } do |f|
+  = render partial: 'form', locals: { f: f }

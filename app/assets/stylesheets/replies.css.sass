@@ -1,0 +1,33 @@
+// Place all the styles related to the replies controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "bootstrap_and_overrides"
+#replies
+  border: dashed 1px $grayLighter
+  padding: 10px
+  ul
+    li.post
+      .post-title
+        border-bottom: solid 2px $gray
+        font-size: 24px
+        font-weight: bold
+        line-height: 24px
+        padding: 10px 0
+      h6.create-time
+        text-align: right
+      .post-content
+        padding-top: 20px
+    li.reply
+      border-top: solid 1px $grayLighter
+      padding: 10px 0 10px 0
+      .action
+        margin-top: 10px
+        text-align: right
+        color: $grayLight
+
+#reply-post
+  margin-top: 20px
+  padding-top: 10px
+  border-top: solid 1px $blue
+      

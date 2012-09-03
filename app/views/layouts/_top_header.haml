@@ -1,0 +1,15 @@
+.navbar.navbar-fixed-top
+  .navbar-inner
+    .container
+      %a.btn.btn-navbar{ "data-target" => ".nav-collapse", "data-toggle" => "collapse" }
+        %span.icon-bar icon
+      = link_to '神路信息资源管理', root_path, class: "brand"
+      %ul.nav.pull-right
+        - if user_signed_in?
+          %li= link_to current_user.email, '#'
+          %li.divider-vertical
+          %li= link_to t('log_out'), destroy_user_session_path, method: :delete
+        - else
+          %li= link_to t('log_in'), new_user_session_path
+          %li= link_to t('sign_up'), new_user_registration_path
+        %li.divider-vertical
