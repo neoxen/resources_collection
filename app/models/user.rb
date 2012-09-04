@@ -16,6 +16,7 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #
+#  username								:string						not null 
 
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
@@ -25,7 +26,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :username, :password, :password_confirmation, :remember_me
+
+  validates :username, :uniqueness => { :case_sensitive => false }
 
   has_many :replies
   has_many :posts

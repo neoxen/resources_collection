@@ -5,6 +5,7 @@ zh-CN:
         title: 新用户注册
         sign_up: 用户注册
         email: 请输入邮件地址
+        username: 请输入用户名称
         pwd: 请输入用户密码
         con_pwd: 请确认用户密码
       edit:
@@ -16,6 +17,7 @@ zh-CN:
       new:
         title: 用户登录 
         email: 请输入邮件地址
+        username: 请输入用户名称
         pwd: 请输入用户密码
         remember: 记住我
         sign_in: 登录
