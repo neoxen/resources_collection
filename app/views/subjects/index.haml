@@ -1,0 +1,29 @@
+- model_class = Subject
+
+- if user_signed_in?  
+  - content_for :sidebar_publish do
+    .well-small
+      = link_to t('publish', model: model_class.model_name.human), new_subject_path, class: 'btn btn-primary'
+
+.alert.aler-info
+  %p= t('description')
+
+#subjects
+  %ul.unstyled
+    - @subjects.each do |subject|
+      %li.subject.row-fluid
+        .span2
+          .create-time
+            .md= subject.created_at.strftime("%m-%d")
+            .y= subject.created_at.strftime("%G")
+            - if user_signed_in?
+              .action
+                = link_to t('edit'), edit_subject_path(subject)
+                = link_to t('destroy'), subject_path(subject), method: :delete, confirm: t('confirm'), default: '你确定删除吗?' 
+        .span10
+          .subject-title
+            = link_to subject.title, subject_posts_path(subject)
+          .subject-content= subject.explain
+          .subject-info
+            %span.updated_time= subject.updated_at.to_s(:created_time) 
+  

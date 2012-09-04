@@ -1,0 +1,66 @@
+zh-CN:
+  sign_up: 注册
+  log_in: 登录
+  log_out: 退出
+  new: 新增
+  add: 创建
+  publish: 发布%{model}
+  reply: 回复
+  edit: 编辑
+  submit: 提交
+  update: 更新
+  save: 保存
+  delete: 删除
+  destroy: 删除
+  confirm: 确定删除吗？
+  cancel: 取消
+  back: 返回
+  form_disable_with: 提交中...
+  created_at: 创建于
+  updated_at: 更新于
+  edited_at: 编辑于
+  replied_at: 回复于
+  description: 本系统的主旨是提供一个信息资源管理和交流的平台，大家可以按照不同的主题，发布各自在平常工作中学到的知识，遇到的错误及相应的解决办法，推荐的各类资源等。希望大家不要仅仅拷贝资料，而是自己消化提炼后的结果！共同进步，加油！
+
+  views:
+    pagination:
+      first: 首页
+      last: 末页
+      previous: 上一页
+      next: 下一页
+      truncate: ...
+  notice:
+    create: 成功创建了%{model}
+    update: 成功更新了%{model}
+    destroy: 成功删除了%{model}
+
+  layouts:
+  users:
+    new:
+      already_have_account: 已经注册过？
+  user_sessions:
+    new:
+      name_or_email: 用户名或邮箱
+      not_signup_yet: 还未注册？
+      remember_me: 记住我
+      password: 密码
+  pagination:
+    truncate: ...
+    next: 下一页
+    previous: 上一页
+  subjects:
+    new:
+      title: 发布新主题
+      edit: 编辑主题信息
+  posts:
+    new:
+      title: 发布新帖子
+    index:
+      title: 帖子列表
+    edit:
+      edit: 编辑%{model}
+  replies:
+    index:
+      title: 帖子列表
+      detail: 详细信息
+    

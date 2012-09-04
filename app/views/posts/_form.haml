@@ -1,0 +1,7 @@
+= f.input :title
+= f.kindeditor :content, width: 600, height: 400
+
+.form-actions
+  = f.button :submit, class: 'btn-primary'
+  = link_to t('cancel'), subject_posts_path(@subject), class: 'btn'
+

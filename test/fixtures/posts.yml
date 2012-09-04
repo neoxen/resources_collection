@@ -1,0 +1,39 @@
+# == Schema Information
+#
+# Table name: posts
+#
+#  id         :integer          not null, primary key
+#  title      :string(255)
+#  content    :text
+#  subject_id :integer
+#  user_id    :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+# This model initially had no columns defined.  If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+normal:
+  title: 'this is a test title'
+  content: 'this is a test content'
+  user_id: 1
+  subject_id: 1
+
+without_title:
+  content: 'this is a post without user'
+  subject_id: 1
+  user_id: 1
+
+without_user:
+  title: 'this is a post without user'
+  content: 'this is a post without user'
+  subject_id: 1
+  
+without_subject:
+  title: 'this is a post without subject'
+  content: 'this is a post without subject'
+  user_id: 1

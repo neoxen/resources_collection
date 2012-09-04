@@ -1,0 +1,29 @@
+- model_class = Post
+
+- if user_signed_in?
+  - content_for :sidebar_publish do
+    .well-small
+      = link_to t('publish', model: model_class.model_name.human), new_subject_post_path(@subject), class: 'btn btn-primary'
+
+
+%ul.breadcrumb
+  %li
+    = link_to Subject.model_name.human, subjects_path
+    %span.divider /
+  %li.active
+    = @subject.title
+
+
+#posts
+  %ul.unstyled
+    - @posts.each do |post|
+      %li
+        %h3= link_to post.title, post_replies_path(post)
+        #post_info
+          =l post.created_at
+          - if current_user and current_user == post.user
+            = link_to t('edit'), edit_subject_post_path(@subject, post), class: 'btn btn-mini' 
+            = link_to t('destroy'), subject_post_path(@subject, post), method: :delete, :data => { confirm: t('confirm') }, class: 'btn btn-mini btn-danger'
+
+
+

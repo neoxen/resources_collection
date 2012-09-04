@@ -1,0 +1,23 @@
+zh-CN:
+  activerecord:
+    models:
+      user: 用户 
+      subject: 主题
+      post: 帖子
+      reply: 跟贴
+    attributes:
+      user:
+        name: 名字
+      subject:
+        title: 主题名称
+        explain: 主题描述
+        created_at: 创建时间
+      post:
+        title: 标题
+        content: 内容
+        attachments: 附件
+        user_name: 发布人
+        created_at: 创建时间
+      reply:
+        content: 内容
+        user_name: 回复人
