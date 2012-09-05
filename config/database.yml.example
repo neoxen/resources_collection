@@ -15,7 +15,7 @@ development:
   database: job_logger_development
   pool: 5
   username: root
-  password: 86480627q
+  password: password
   socket: /var/run/mysqld/mysqld.sock
 
 # Warning: The database defined as "test" will be erased and
@@ -28,22 +28,15 @@ test:
   database: resources_collection_test
   pool: 5
   username: root
-  password: 86480627q
+  password: password
   socket: /var/run/mysqld/mysqld.sock
 
 production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-<<<<<<< HEAD
-  database: job_logger_production
-  pool: 5
-  username: root
-  password:
-=======
   database: resources_collection_production
   pool: 5
-  username: sl
-  password: kaifa01
->>>>>>> 9784c6630d60f114a92b7a1f42d7884506413af0
+  username: root
+  password: password
   socket: /var/run/mysqld/mysqld.sock
