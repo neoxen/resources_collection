@@ -20,6 +20,11 @@
       %li
         %h3= link_to post.title, post_replies_path(post)
         #post_info
+          - if current_user and current_user == post.user
+            = t('creator')
+          - else
+            = post.user.username
+          = t('created_at')
           =l post.created_at
           - if current_user and current_user == post.user
             = link_to t('edit'), edit_subject_post_path(@subject, post), class: 'btn btn-mini' 
