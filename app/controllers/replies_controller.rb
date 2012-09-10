@@ -50,7 +50,7 @@ class RepliesController < ApplicationController
 
     respond_to do |format|
       if @reply.update_attributes(params[:reply])
-        format.html { redirect_to @reply, notice: t('notice.update', model: Reply.model_name.human) }
+        format.html { redirect_to post_replies_path(@post), notice: t('notice.update', model: Reply.model_name.human) }
       else
         format.html { render action: "edit" }
       end

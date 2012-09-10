@@ -3,4 +3,6 @@
   <h1><%=t '.title', :default => t('helpers.titles.edit', :model => model_class.model_name.human,
                                    :default => "Edit #{model_class.model_name.human}") %></h1>
 </div>
-<%= render :partial => 'form' %>
+<%= simple_form_for @reply, url: post_reply_path(@post, @reply), method: 'put', html: { class: 'form-vertical' } do |f| %>
+  <%= render :partial => 'form', locals: { f: f }%>
+<% end %>

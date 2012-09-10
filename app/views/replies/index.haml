@@ -28,7 +28,7 @@
         .action
           %h6=l reply.created_at
           - if current_user and current_user == reply.user
-            = link_to t('edit'), edit_post_path(@post, reply), class: 'btn btn-mini'
+            = link_to t('edit'), edit_post_reply_path(@post, reply), class: 'btn btn-mini'
             = link_to t('destroy'), post_reply_path(@post, reply), method: :delete, confirm: t('confirm'), class: 'btn btn-mini btn-danger'
 
 = paginate @replies
