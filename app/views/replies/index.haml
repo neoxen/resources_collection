@@ -1,9 +1,13 @@
 - model_class = Reply
 
+
+/最新回帖，取前5条
 - content_for :sidebar do
   .well-small
-    %h4 类似帖子
-
+    %h3 *最新发布的帖子*
+    - @top_posts.each do |post|
+      = link_to post.title, post_replies_path(post)
+      %br
 
 %ul.breadcrumb
   %li

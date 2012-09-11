@@ -5,6 +5,13 @@
     .well-small
       = link_to t('publish', model: model_class.model_name.human), new_subject_post_path(@subject), class: 'btn btn-primary'
 
+/最新发帖，取前5条
+- content_for :sidebar do
+  .well-small
+    %h3 *最新发布的帖子*
+    - @top_posts.each do |post|
+      = link_to post.title, post_replies_path(post)
+      %br
 
 %ul.breadcrumb
   %li

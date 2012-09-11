@@ -2,6 +2,7 @@ class RepliesController < ApplicationController
   before_filter :find_post
   def index
     @replies = @post.replies.page(params[:page])
+    @top_posts = Post.order("created_at desc").limit(5)
     @reply = Reply.new
 
     respond_to do |format|

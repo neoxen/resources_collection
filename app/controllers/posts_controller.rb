@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   before_filter :find_subject
   def index
     @posts = @subject.posts.all
+    @top_posts = @subject.posts.order("created_at desc").limit(5)
 
     respond_to do |format|
       format.html # index.html.erb

@@ -3,6 +3,7 @@ class SubjectsController < ApplicationController
 
   def index
     @subjects = Subject.all
+    @top_posts = Post.order("created_at desc").limit(5)
   end
 
   def show
