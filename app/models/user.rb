@@ -19,6 +19,9 @@
 #  username								:string						not null 
 
 class User < ActiveRecord::Base
+  # using gravatar service
+  include Gravtastic
+  gravtastic
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
