@@ -23,17 +23,31 @@
   %ul.unstyled
     %li.post
       .post-title= @post.title
-      %h6.create-time=l @post.created_at
+      %h6.create-time
+        = image_tag @post.user.gravatar_url(:size => 20) 
+        - if current_user and current_user == @post.user
+          = t('creator')
+        - else
+          = @post.user.username
+        = t('created_at')
+        =l @post.created_at
       .post-content
         = @post.content.html_safe
     - @replies.each do |reply|
       %li.reply
         .content= reply.content.html_safe
         .action
-          %h6=l reply.created_at
-          - if current_user and current_user == reply.user
-            = link_to t('edit'), edit_post_reply_path(@post, reply), class: 'btn btn-mini'
-            = link_to t('destroy'), post_reply_path(@post, reply), method: :delete, confirm: t('confirm'), class: 'btn btn-mini btn-danger'
+          %h6
+            = image_tag reply.user.gravatar_url(:size => 20) 
+            - if current_user and current_user == reply.user
+              = t('creator')
+            - else
+              = reply.user.username
+            = t('created_at')
+            =l reply.created_at
+            - if current_user and current_user == reply.user
+              = link_to t('edit'), edit_post_reply_path(@post, reply), class: 'btn btn-mini'
+              = link_to t('destroy'), post_reply_path(@post, reply), method: :delete, confirm: t('confirm'), class: 'btn btn-mini btn-danger'
 
 = paginate @replies
 
