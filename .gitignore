@@ -16,3 +16,9 @@
 
 # Ignore the database.yml file
 config/database.yml
+
+# IDE project files
+/.idea
+
+# Mac OS system files
+.DS_Store
